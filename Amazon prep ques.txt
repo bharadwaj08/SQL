@@ -1,0 +1,19 @@
+
+https://www.youtube.com/watch?v=SVfdmY9H1o0
+
+
+1. Query to get product sold on both days and the count of it
+
+2. Query to get products ordered on a 'x' but not on 'y'
+
+3. Query to get highest sold product (Qty * Price) on both days
+
+4. For all products, query to get total sales of each day adjacent to each other
+
+5. Query to get all products day vis, that was ordered more than once
+
+6. split single row into multiple rows 
+
+
+
+ 

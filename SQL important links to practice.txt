@@ -1,0 +1,3 @@
+https://lyniguez.github.io/SQL-Example-Work/
+
+https://github.com/joelsotelods/sakila-db-queries

@@ -1,0 +1,116 @@
+1)
+Q1
+
+SELECT e.*
+FROM Employee e
+GROUP BY Emp_Name
+HAVING COUNT(Emp_Name) > 1;
+
+Q2
+
+SELECT DISTINCT * FROM employee;
+
+Q3
+
+SELECT *
+FROM 
+(SELECT *, ROW_NUMBER() OVER(PARTITION BY Emp_Name ORDER BY Created_Date DESC) as RN 
+FROM employee) e
+WHERE e.RN =1;
+
+Q4
+
+SELECT e.*
+FROM Employee e
+JOIN ( SELECT * FROM Employee 
+GROUP BY Emp_Name
+HAVING COUNT(Emp_Name) >= 2) e1
+ON e.Emp_Name = e1.Emp_Name;
+
+Q5
+
+SELECT COUNT(DISTINCT Emp_Name) FROM employee;
+
+Q6
+
+SELECT Created_Date, COUNT(DISTINCT Emp_Name) Uniq_Count 
+FROM employee
+GROUP BY Created_Date;
+
+
+2)
+Q1
+
+SELECT d.Dept_Name, COUNT(*) as employee_count
+FROM employee e 
+LEFT JOIN department d
+ON e.Dept_Id = d.Dept_Id
+GROUP BY d.Dept_Name;
+
+Q2
+
+SELECT Dept_Name 
+FROM employee e
+JOIN department d
+ON e.Dept_Id = d.Dept_Id
+GROUP BY Dept_Name
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+Q3
+
+SELECT Dept_Name 
+FROM employee e
+JOIN department d
+ON e.Dept_Id = d.Dept_Id
+GROUP BY Dept_Name
+ORDER BY COUNT(*) DESC
+LIMIT 2;
+
+Q4
+
+
+
+Q5
+
+SELECT Emp_Name 
+FROM employee e
+WHERE NOT EXISTS (
+SELECT *
+FROM department
+WHERE Dept_Id = e.Dept_Id);
+
+Q6
+
+SELECT Dept_Name 
+FROM department d
+WHERE NOT EXISTS (
+SELECT *
+FROM employee
+WHERE Dept_Id = d.Dept_Id);
+
+
+3)
+
+
+
+4)
+
+
+
+5)
+
+
+
+6)
+
+
+
+7)
+
+
+
+8)
+
+
+
